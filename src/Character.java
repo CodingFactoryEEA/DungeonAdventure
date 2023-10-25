@@ -6,7 +6,7 @@ public class Character {
     //Les point de vie du personnage
     protected int m_iLifePoints;
     //L'arme du personnage
-    protected Weapon m_Weapon
+    protected Weapon m_Weapon;
 
 
     /**
