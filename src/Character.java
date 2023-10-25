@@ -4,6 +4,7 @@
 public class Character {
 
     private int m_iLifePoints;
+
     /**
      * Default constructor
      */
