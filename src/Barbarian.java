@@ -1,7 +1,7 @@
 /**
  *
  */
-public class Barbarian{
+public class Barbarian extends Monster{
 
     /**
      * Default constructor

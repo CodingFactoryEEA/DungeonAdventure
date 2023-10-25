@@ -9,6 +9,8 @@ public class HeroWeapons extends Weapon implements Searchable {
      */
     private int m_iAttackBonus;
 
+    public HeroWeapons() {
+    }
     public HeroWeapons(int m_iAttackBonus) {
         this.m_iAttackBonus = m_iAttackBonus;
     }
