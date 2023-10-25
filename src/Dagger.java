@@ -1,5 +1,5 @@
 /**
- * Cette class represonte l'arme du monstre qui est le DAGGER
+ * Cette class presonte l'arme du monstre qui est le DAGGER
  */
 public class Dagger extends MonsterWeapon {
 

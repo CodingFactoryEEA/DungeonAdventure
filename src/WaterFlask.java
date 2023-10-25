@@ -1,7 +1,7 @@
 /**
  * 
  */
-public class WaterFlask{
+public class WaterFlask extends HeroWeapons{
 
     /**
      * Default constructor

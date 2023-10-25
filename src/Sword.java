@@ -1,7 +1,7 @@
 /**
  * 
  */
-public class Sword extends Weapon /*HeroWeapons*/ {
+public class Sword extends /*Weapon*/ HeroWeapons {
 
     /**
      * Default constructor

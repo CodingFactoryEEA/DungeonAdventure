@@ -1,7 +1,7 @@
 /**
  * 
  */
-public class Lightning extends Weapon /*MonsterWeapon*/ {
+public class Lightning extends /*Weapon*/ MonsterWeapon {
 
     /**
      * Default constructor

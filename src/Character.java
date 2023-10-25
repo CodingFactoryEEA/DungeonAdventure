@@ -27,7 +27,7 @@ public class Character {
      * Cette méthode permet de retourné les point de vie du personnage.
      * @return m_iLifePoints
      */
-    public int getM_iLifePoints() {
+    public int getNbLifePoints() {
         return m_iLifePoints;
     }
 
