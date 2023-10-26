@@ -1,25 +1,25 @@
-import java.util.ArrayList;
-
 public class Room {
 
     private Monster monsterRoom;
+    MonsterFactory monsterFactory;
 
     public Room(int p_iIndex) {
+        monsterFactory = new MonsterFactory();
         if (p_iIndex % 4 == 0 && p_iIndex % 3 == 0) {
             //Create a Barbarian
-            monsterRoom = MonsterFactory.CreatMonster(MonsterType.BARBARIAN);
+            monsterRoom = monsterFactory.createMonster(MonsterType.BARBARIAN);
         } else if (p_iIndex % 4 == 0) {
             //Create a Thief
-            monsterRoom = MonsterFactory.CreatMonster(MonsterType.THIEF);
+            monsterRoom = monsterFactory.createMonster(MonsterType.THIEF);
         } else if (p_iIndex % 3 == 0) {
             //Create a Troll
-            monsterRoom = MonsterFactory.CreatMonster(MonsterType.TROLL);
+            monsterRoom = monsterFactory.createMonster(MonsterType.TROLL);
         } else if (isPrime(p_iIndex)) {
             //Create a Sorcerer
-            monsterRoom = MonsterFactory.CreatMonster(MonsterType.SORCERER);
+            monsterRoom = monsterFactory.createMonster(MonsterType.SORCERER);
         } else {
             //Create a Zombie
-            monsterRoom = MonsterFactory.CreatMonster(MonsterType.ZOMBIE);
+            monsterRoom = monsterFactory.createMonster(MonsterType.ZOMBIE);
         }
 
         if (p_iIndex % 7 == 0){
