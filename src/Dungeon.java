@@ -1,4 +1,13 @@
+import java.util.ArrayList;
+
 public class Dungeon {
+    ArrayList<Room> rooms;
+    public Dungeon() {
+        rooms = new ArrayList<>();
+        for (int i = 0; i < ConfigParams.NBROOM; i++ ){
+            this.rooms.add(new Room(ConfigParams.NBROOM));
+        }
+    }
     //This class will contain Rooms through which the
     //Hero will go through
 
@@ -15,8 +24,8 @@ public class Dungeon {
     }
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
-    public Monster[] getAllMonstersFromDungeon(){
-        Monster[] monstersArray = new Monster[1];
+    public ArrayList<Monster> getAllMonstersFromDungeon(){
+        ArrayList<Monster> monstersArray = new ArrayList<>();
         return monstersArray;
     }
 }

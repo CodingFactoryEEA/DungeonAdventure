@@ -11,6 +11,7 @@ public class Troll extends Monster {
         super.m_Weapon = new Club();
         if (Monster.s_iNbTrollInstances % 4 == 3) {
             //create a Strength Potion
+            super.m_Item = new StrengthPotion();
         }
     }
 

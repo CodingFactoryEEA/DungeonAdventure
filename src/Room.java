@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+
 public class Room {
 
     private Monster monsterRoom;
+    private ArrayList<Item> m_Items;
     MonsterFactory monsterFactory;
 
     public Room(int p_iIndex) {
         monsterFactory = new MonsterFactory();
+        //TODO Nombre de monstres par room
         if (p_iIndex % 4 == 0 && p_iIndex % 3 == 0) {
             //Create a Barbarian
             monsterRoom = monsterFactory.createMonster(MonsterType.BARBARIAN);
@@ -23,11 +27,11 @@ public class Room {
         }
 
         if (p_iIndex % 7 == 0){
-
+            m_Items.add(new HealthPotion());
         }
             //Make the room contains a HealthPotion
         if (p_iIndex % 4 == 0){
-
+            m_Items.add(new StrengthPotion());
         }
         //Make the room contains a  StrengthPotion()
     }

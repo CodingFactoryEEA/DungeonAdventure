@@ -10,11 +10,12 @@ public class Barbarian extends Monster{
     public Barbarian() {
         super.m_sEffectiveWeaponType = Axe.class.getName();
         super.m_Weapon = new Axe();
+        s_iNbBarbarianInstances++;
         if(Monster.s_iNbBarbarianInstances%2 == 0 ){
-            //create a health potion
+            super.m_Item = new HealthPotion();
         }
         else{
-            //create a StrengthPotion
+            super.m_Item = new StrengthPotion();
         }
 
     }
