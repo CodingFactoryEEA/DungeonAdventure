@@ -22,6 +22,7 @@ public class Hero extends Character {
     public Hero(int m_iStrength) {
         super();
         this.m_iStrength = m_iStrength;
+        m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
 
     }
 

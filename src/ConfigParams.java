@@ -18,6 +18,10 @@ public abstract class ConfigParams {
     /**
      * Les points de vie du HERO
      */
-    public static final int m_iLifePointsHero = 550;
+    public static final int LIFE_POINTS_HERO = 550;
 
+    /**
+     * La force de héro
+     */
+    public static final int STRENGTH_HERO = 125 ;
 }
