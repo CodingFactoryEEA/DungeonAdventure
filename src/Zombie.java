@@ -7,7 +7,7 @@ public class Zombie extends Monster {
      * Default constructor
      */
     public Zombie() {
-        m_iLifePoints = ConfigParams.m_iLifePointsZombie;
+        m_iLifePoints = ConfigParams.LIFE_POINTS_ZOMBIE;
         super.m_sEffectiveWeaponType = Bite.class.getName();
         super.m_Weapon = new Bite();
         if (Monster.s_iNbZombieInstances % 5 == 1) {

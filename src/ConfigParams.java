@@ -9,10 +9,15 @@ public abstract class ConfigParams {
      * Les points de vie des Monstres
      */
 
-    public static final int m_iLifePointsTroll = 550;
-    public static final int m_iLifePointsThief = 450;
-    public static final int m_iLifePointsSorcerer = 350;
-    public static final int m_iLifePointsZombie = 350;
-    public static final int m_iLifePointsBarbarian = 650;
+    public static final int LIFE_POINTS_TROLL = 550;
+    public static final int LIFE_POINTS_THIEF = 450;
+    public static final int LIFE_POINTS_SORCERER = 350;
+    public static final int LIFE_POINTS_ZOMBIE = 350;
+    public static final int LIFE_POINTS_BARBARIAN = 650;
+
+    /**
+     * Les points de vie du HERO
+     */
+    public static final int m_iLifePointsHero = 550;
 
 }
