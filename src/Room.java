@@ -7,6 +7,7 @@ public class Room {
     MonsterFactory monsterFactory;
 
     public Room(int p_iIndex) {
+        m_Items = new ArrayList<>();
         monsterFactory = new MonsterFactory();
         //TODO Nombre de monstres par room
         if (p_iIndex % 4 == 0 && p_iIndex % 3 == 0) {

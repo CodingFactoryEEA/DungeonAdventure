@@ -6,6 +6,7 @@ public class Main {
     //TODO: Put into the readme file that command line args give the nb of Rooms
     public static void main(String[] args) {
 
+        Dungeon dungeon = new Dungeon();
 
 
 
