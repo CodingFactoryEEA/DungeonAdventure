@@ -50,10 +50,18 @@ public class Room {
 
     public Monster getMonster(){
         //TODO : Implements methods
-        return new Monster();
+        return monsterRoom;
     }
 
     public void enterRoom(Hero p_Hero){
         //TODO : Implements methods
+
+        // a vérifier mais je pense que c'est ok ;)
+        p_Hero.discoverEnnemy(this.monsterRoom);
+        while (!this.monsterRoom.isalive() && p_Hero.isalive()) {
+            this.monsterRoom.attack(p_Hero);
+            if (!p_Hero.isalive()) break;
+            p_Hero.attack(this.monsterRoom);
+        }
     }
 }
