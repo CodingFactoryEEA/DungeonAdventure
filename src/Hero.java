@@ -94,12 +94,12 @@ public class Hero extends Character {
         boolean isOk = true;
         while(isOk){
             Scanner scanner = new Scanner(System.in);
-            if(scanner.next() == p_Monster.getEffectiveWeaponType()){
+            if(scanner.next().equals(p_Monster.getEffectiveWeaponType())){
                 selectWeaponFromArsenal(p_Monster.getEffectiveWeaponType());
                 isOk = false;
             }
             else {
-                System.out.println("erreur d'entrée, veuillez entrer :" + p_Monster.getEffectiveWeaponType() +
+                System.out.println("erreur d'entrée, veuillez entrer : " + p_Monster.getEffectiveWeaponType() +
                         " entrez le sans erreur pour le moment svp x'D");
             }
         }

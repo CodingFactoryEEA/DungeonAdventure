@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Dungeon {
-    ArrayList<Room> rooms;
+    private ArrayList<Room> rooms = new ArrayList<>();
     public Dungeon() {
-        rooms = new ArrayList<>();
         for (int i = 0; i < ConfigParams.NBROOM; i++ ){
             this.rooms.add(new Room(ConfigParams.NBROOM));
         }
@@ -20,6 +19,11 @@ public class Dungeon {
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public void greetHeros(Hero p_Hero){
+
+        for (Room room : this.rooms) {
+            room.enterRoom(p_Hero);
+            if (p_Hero.isalive()) break;
+        }
 
     }
 
