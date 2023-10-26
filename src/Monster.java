@@ -33,7 +33,6 @@ public class Monster extends Character implements Searchable {
     @Override
     public void attack(Character p_TargetCharacter) {
             // TODO: 26/10/2023
-
     }
 
     /**
@@ -44,6 +43,16 @@ public class Monster extends Character implements Searchable {
     public boolean isWeaponEfficient(Weapon p_Weapon){
         return CheckWeapon(p_Weapon);
     }
+
+    /**
+     * Cette méthode
+     * @param p_Power
+     * @return
+     */
+    public void hitByPower(ReduceLifePower p_Power){
+        // TODO: 26/10/2023
+    }
+
 
     private boolean CheckWeapon(Weapon p_Weapon) {
         if (this instanceof Barbarian && p_Weapon instanceof Sword){
@@ -60,15 +69,5 @@ public class Monster extends Character implements Searchable {
         }
         return this instanceof Zombie && p_Weapon instanceof FireArrow;
     }
-
-    /**
-     * Cette méthode
-     * @param p_Power
-     * @return
-     */
-    public void hitByPower(ReduceLifePower p_Power){
-        // TODO: 26/10/2023
-    }
-
 
 }
