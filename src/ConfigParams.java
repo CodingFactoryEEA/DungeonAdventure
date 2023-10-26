@@ -4,4 +4,9 @@ public abstract class ConfigParams {
      */
     public static final int NBROOM = 8;
 
+    //TODO minor : Strings to move to another file
+    public static final String GREETINGS = "|\n_______________________\n|Welcome to Coding Dungeon " +
+            "\n Let enter THE DUNGEON\n_______________________|";
+
+
 }
