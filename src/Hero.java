@@ -89,10 +89,20 @@ public class Hero extends Character {
 
     public void discoverEnnemy(Monster p_Monster) {
         //TODO minor : Check values & set try catch
-        System.out.println("L'arme efficace contre l'ennemie est " + p_Monster.m_Weapon.getClass().getName()+
+        System.out.println("L'arme efficace contre l'ennemie est " + p_Monster.getEffectiveWeaponType() +
                 " entrez le sans erreur pour le moment svp x'D");
-        Scanner scanner = new Scanner(System.in);
-        selectWeaponFromArsenal(scanner.next());
+        boolean isOk = true;
+        while(isOk){
+            Scanner scanner = new Scanner(System.in);
+            if(scanner.next() == p_Monster.getEffectiveWeaponType()){
+                selectWeaponFromArsenal(p_Monster.getEffectiveWeaponType());
+                isOk = false;
+            }
+            else {
+                System.out.println("erreur d'entrée, veuillez entrer :" + p_Monster.getEffectiveWeaponType() +
+                        " entrez le sans erreur pour le moment svp x'D");
+            }
+        }
                      /*   // Liste des monstres disponibles dans le jeu
                         Monster[] availableMonsters = {
                                 new Magicien("Magicien", 50, new Eclairs(5)),
@@ -110,24 +120,24 @@ public class Hero extends Character {
 
                       */
 
-        // Créez un générateur aléatoire
-        Random random = new Random();
-
-        // Générez un nombre aléatoire pour déterminer le type de monstre
-        int randomMonsterType = random.nextInt(100);
-
-        // Par exemple, s'il y a 70% de chance de rencontrer un magicien
-        if (randomMonsterType < 70) {
-            // Créez un Magicien
-            int SorcererChanceParalysie = 10; // 10% de chance de paralyser le héros
-            int SorcererDegatsEclair = 20; // Dégâts de l'éclair
-            return new Sorcerer();
-        } else {
-            // Sinon, créez un Barbare
-            int barbarianChanceCoupCritique = 30; // 30% de chance de coup critique
-            int barbarianDegatsHache = 30; // Dégâts de la hache
-            return new Barbarian();
-        }
+//        // Créez un générateur aléatoire
+//        Random random = new Random();
+//
+//        // Générez un nombre aléatoire pour déterminer le type de monstre
+//        int randomMonsterType = random.nextInt(100);
+//
+//        // Par exemple, s'il y a 70% de chance de rencontrer un magicien
+//        if (randomMonsterType < 70) {
+//            // Créez un Magicien
+//            int SorcererChanceParalysie = 10; // 10% de chance de paralyser le héros
+//            int SorcererDegatsEclair = 20; // Dégâts de l'éclair
+//            return new Sorcerer();
+//        } else {
+//            // Sinon, créez un Barbare
+//            int barbarianChanceCoupCritique = 30; // 30% de chance de coup critique
+//            int barbarianDegatsHache = 30; // Dégâts de la hache
+//            return new Barbarian();
+//        }
 
 
     }
@@ -138,9 +148,9 @@ public class Hero extends Character {
 
     public void improveHealth(int p_iValue) {
         if (p_iValue > 0) {
-            this.pointsDeVie += p_iValue; // Augmenter la santé du héros de la valeur spécifiée
-            System.out.println(this.getNom() + " améliore sa santé de " + p_iValue + " points.");
-            System.out.println("Points de santé actuels de " + this.getNom() + " : " + this.pointsDeVie);
+            this.m_iLifePoints += p_iValue; // Augmenter la santé du héros de la valeur spécifiée
+            System.out.println("La potion : " +HealthPotion.class.getClass().getName() + " améliore votre santé de " + p_iValue + " points.");
+            System.out.println("Vos points de santé actuels sont de " +this.m_iLifePoints+ " + points De Vie");
         } else {
             System.out.println("La valeur de l'amélioration de la santé doit être positive.");
         }
@@ -148,22 +158,23 @@ public class Hero extends Character {
 
 
     public void improveStrength(int p_iValue) {
-        m_iStrength += p_iValue;
+        if (p_iValue > 0) {
+            this.m_iStrength += p_iValue; // Augmenter la force du héros de la valeur spécifiée
+            System.out.println("La potion : " +StrengthPotion.class.getClass().getName() + " améliore votre force de " + p_iValue + " points.");
+            System.out.println("Vos points de force actuels sont de " +this.m_iStrength+ " + points de force");
+        } else {
+            System.out.println("La valeur de l'amélioration de la force doit être positive.");
+        }
     }
 
     public void searchForPotions(Searchable p_Searchable) {
-        int potionsTrouvees = p_Searchable.searchPotions(); // Appeler la méthode searchPotions() de l'objet Searchable
-
-        if (potionsTrouvees > 0) {
-            System.out.println(this.getNom() + " a trouvé " + potionsTrouvees + " potion(s) de santé.");
-            this.improveHealth(potionsTrouvees * 10); // Par exemple, chaque potion restaure 10 points de santé
-        } else {
-            System.out.println(this.getNom() + " n'a trouvé aucune potion de santé dans cet objet Searchable.");
-        }
+//        int potionsTrouvees = p_Searchable.searchPotions(); // Appeler la méthode searchPotions() de l'objet Searchable
+//
+//        if (potionsTrouvees > 0) {
+//            System.out.println(this.getNom() + " a trouvé " + potionsTrouvees + " potion(s) de santé.");
+//            this.improveHealth(potionsTrouvees * 10); // Par exemple, chaque potion restaure 10 points de santé
+//        } else {
+//            System.out.println(this.getNom() + " n'a trouvé aucune potion de santé dans cet objet Searchable.");
+//        }
     }
-}
-
-
-
-
 }

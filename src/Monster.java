@@ -40,6 +40,7 @@ public class Monster extends Character implements Searchable {
 
     @Override
     public void attack(Character p_TargetCharacter) {
+        super.attack(p_TargetCharacter);
             // TODO: 26/10/2023
     }
 
