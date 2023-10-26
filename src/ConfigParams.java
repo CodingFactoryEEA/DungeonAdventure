@@ -24,4 +24,14 @@ public abstract class ConfigParams {
      * La force de héro
      */
     public static final int STRENGTH_HERO = 125 ;
+
+    /**
+     * ReduceLifePower pour les Monstre
+     */
+    public static final int REDUCE_LIFE_POWER_TROLL = 18;
+    public static final int REDUCE_LIFE_POWER_THIEF = 15;
+    public static final int REDUCE_LIFE_POWER_SORCERER = 10;
+    public static final int REDUCE_LIFE_POWER_ZOMBIE = 12;
+    public static final int REDUCE_LIFE_POWER_BARBARIAN = 5;
+
 }
