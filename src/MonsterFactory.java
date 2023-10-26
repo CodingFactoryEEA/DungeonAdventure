@@ -1,10 +1,12 @@
-import java.util.Random;
+public class MonsterFactory extends Factory{
 
-public class MonsterFactory {
-
-    static Random random = new Random();
-
-    public static Monster CreatMonster(MonsterType type){
+    /**
+     * Cette méthode permet de créer des monsters en fonction du type demandé
+     * @param type
+     * @return MonsterType
+     */
+    @Override
+    public Monster createMonster(MonsterType type) {
         switch (type){
             case BARBARIAN -> {
                 return new Barbarian();
@@ -21,7 +23,10 @@ public class MonsterFactory {
             case TROLL -> {
                 return new Troll();
             }
+            default -> {
+                return null;
+            }
         }
-        return new Monster();
     }
+
 }
