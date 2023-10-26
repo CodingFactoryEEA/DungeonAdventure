@@ -1,7 +1,7 @@
 /**
  * 
  */
-public class Axe {
+public class Axe extends MonsterWeapon{
 
     /**
      * Default constructor

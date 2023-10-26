@@ -1,7 +1,7 @@
 /**
  * 
  */
-public class FireArrow {
+public class FireArrow extends HeroWeapons{
 
     /**
      * Default constructor
