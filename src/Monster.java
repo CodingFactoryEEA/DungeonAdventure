@@ -13,6 +13,13 @@ public class Monster extends Character implements Searchable {
     private boolean m_bSearchDone;
     protected Item m_Item;
 
+    public Monster() {
+
+        //this.m_sEffectiveWeaponType = m_sEffectiveWeaponType;
+        //this.m_bSearchDone = m_bSearchDone;
+        //this.m_Item = m_Item;
+    }
+
 
     /**
      * @return
@@ -27,6 +34,7 @@ public class Monster extends Character implements Searchable {
      * @return m_sEffectiveWeaponType
      */
     public String getEffectiveWeaponType() {
+
         return m_sEffectiveWeaponType;
     }
 
@@ -41,7 +49,12 @@ public class Monster extends Character implements Searchable {
      * @return
      */
     public boolean isWeaponEfficient(Weapon p_Weapon){
-        return CheckWeapon(p_Weapon);
+        if (CheckWeapon(p_Weapon) == p_Weapon.getClass().getName()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -54,20 +67,23 @@ public class Monster extends Character implements Searchable {
     }
 
 
-    private boolean CheckWeapon(Weapon p_Weapon) {
+    private String CheckWeapon(Weapon p_Weapon) {
+        //TODO : use m_sEffectiveWeaponType
         if (this instanceof Barbarian && p_Weapon instanceof Sword){
-            return true;
+            return Sword.class.getName();
         }
         if (this instanceof Sorcerer && p_Weapon instanceof WaterFlask){
-            return true;
+            return WaterFlask.class.getName();
         }
         if (this instanceof Thief && p_Weapon instanceof Arrow){
-            return true;
+            return Arrow.class.getName();
         }
         if (this instanceof Troll && p_Weapon instanceof Spear){
-            return true;
+            return Spear.class.getName();
         }
-        return this instanceof Zombie && p_Weapon instanceof FireArrow;
-    }
+        if (this instanceof Zombie && p_Weapon instanceof FireArrow)
+            return FireArrow.class.getName();
+        return "Invalid Name";
+        }
 
 }

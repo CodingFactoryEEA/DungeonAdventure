@@ -37,17 +37,23 @@ public class Hero extends Character {
         });
     }
 
-
+    /**
+     *
+     * @param p_TargetCharacter
+     */
     @Override
     public void attack(Character p_TargetCharacter) {
+
+        //TODO Mettre un try catch ou un check ou trouver une autre façon ou endroit où appeler la fonction
+        Monster monster = (Monster)p_TargetCharacter;
+        if(monster.isWeaponEfficient(this.m_Weapon)){
+            //TODO Mettre un try catch ou un check ou trouver une autre façon ou endroit où appeler la fonction
+            HeroWeapons heroWeapon = (HeroWeapons)this.m_Weapon;
+            //TODO Implémenter la logique de bonus d'attaque
+            heroWeapon.setAttackBonus(2);
+
+        }
         super.attack(p_TargetCharacter);
-
-
-
-
-
-
-
 
         if (//this.arme
         null == null) {
@@ -81,8 +87,12 @@ public class Hero extends Character {
     }
 
 
-    public Object discoverEnnemy(Monster p_Monster) {
-
+    public void discoverEnnemy(Monster p_Monster) {
+        //TODO minor : Check values & set try catch
+        System.out.println("L'arme efficace contre l'ennemie est " + p_Monster.m_Weapon.getClass().getName()+
+                " entrez le sans erreur pour le moment svp x'D");
+        Scanner scanner = new Scanner(System.in);
+        selectWeaponFromArsenal(scanner.next());
                      /*   // Liste des monstres disponibles dans le jeu
                         Monster[] availableMonsters = {
                                 new Magicien("Magicien", 50, new Eclairs(5)),
@@ -111,12 +121,12 @@ public class Hero extends Character {
             // Créez un Magicien
             int SorcererChanceParalysie = 10; // 10% de chance de paralyser le héros
             int SorcererDegatsEclair = 20; // Dégâts de l'éclair
-            return new Sorcerer("Sorcerer", SorcererChanceParalysie, SorcererDegatsEclair);
+            return new Sorcerer();
         } else {
             // Sinon, créez un Barbare
             int barbarianChanceCoupCritique = 30; // 30% de chance de coup critique
             int barbarianDegatsHache = 30; // Dégâts de la hache
-            return new Barbarian("Barbarian", barbarianChanceCoupCritique, barbarianDegatsHache);
+            return new Barbarian();
         }
 
 

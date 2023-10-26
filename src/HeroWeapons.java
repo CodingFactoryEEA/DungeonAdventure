@@ -34,6 +34,7 @@ public class HeroWeapons extends Weapon implements Searchable {
      * @param p_iBonus
      */
     public void setAttackBonus(int p_iBonus){
+
         m_iAttackBonus += p_iBonus;
     }
 }
