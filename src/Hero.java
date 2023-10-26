@@ -12,17 +12,23 @@ public class Hero extends Character {
 
     public Hero() {
         this.m_Arsenal = new ArrayList();
-        this.m_Arsenal.add(new Sword());
-        this.m_Arsenal.add(new Arrow());
-        this.m_Arsenal.add(new WaterFlask());
-        this.m_Arsenal.add(new Spear());
-        this.m_Arsenal.add(new FireArrow());
+        addWeaponsToArsenal();
     }
 
     public Hero(int m_iStrength) {
         super();
         this.m_iStrength = m_iStrength;
+        this.m_Arsenal = new ArrayList();
+        addWeaponsToArsenal();
 
+
+    }
+    private void addWeaponsToArsenal(){
+        this.m_Arsenal.add(new Sword());
+        this.m_Arsenal.add(new Arrow());
+        this.m_Arsenal.add(new WaterFlask());
+        this.m_Arsenal.add(new Spear());
+        this.m_Arsenal.add(new FireArrow());
     }
 
     /**
