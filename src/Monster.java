@@ -2,7 +2,7 @@
 /**
  *
  */
-public class Monster implements Searchable {
+public class Monster extends Character implements Searchable {
     protected static int s_iNbZombieInstances = 0;
     protected static int s_iNbThiefInstances = 0;
     protected static int s_iNbSorcerInstances = 0;
@@ -16,5 +16,14 @@ public class Monster implements Searchable {
     @Override
     public Item search() {
         return null;
+    }
+
+    @Override
+    public void attack(Character p_TargetCharacter) {
+
+    }
+    public boolean isWeaponEfficient(Weapon p_Weapon){
+        //TODO Implements method
+        return true;
     }
 }

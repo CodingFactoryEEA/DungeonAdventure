@@ -21,6 +21,7 @@ public class Character {
      * @param p_TargetCharacter
      */
     public void attack(Character p_TargetCharacter){
+        m_Weapon.inflictDamage(p_TargetCharacter);
     }
 
     /**
