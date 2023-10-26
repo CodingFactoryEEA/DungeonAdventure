@@ -3,15 +3,22 @@
  */
 public class Barbarian extends Monster{
 
+
     /**
      * Default constructor
      */
     public Barbarian() {
+        // initialisation des point de vie
+        m_iLifePoints = ConfigParams.LIFE_POINTS_BARBARIAN;
+        super.m_sEffectiveWeaponType = Axe.class.getName();
+        super.m_Weapon = new Axe();
+        s_iNbBarbarianInstances++;
         if(Monster.s_iNbBarbarianInstances%2 == 0 ){
-            //create a health potion
+            super.m_Item = new HealthPotion();
         }
         else{
-            //create a StrengthPotion
+            super.m_Item = new StrengthPotion();
         }
+
     }
 }

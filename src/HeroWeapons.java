@@ -2,7 +2,11 @@
  * 
  */
 public class HeroWeapons extends Weapon implements Searchable {
-
+    //TODO: Implements method
+    @Override
+    public Item search() {
+        return null;
+    }
     /**
      * Bonus d'attaque
      * @ m_iAttackBonus
@@ -30,7 +34,7 @@ public class HeroWeapons extends Weapon implements Searchable {
      * @param p_iBonus
      */
     public void setAttackBonus(int p_iBonus){
+
         m_iAttackBonus += p_iBonus;
     }
-
 }
