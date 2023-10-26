@@ -42,4 +42,13 @@ public class Room {
         }
         return true;
     }
+
+    public Monster getMonster(){
+        //TODO : Implements methods
+        return new Monster();
+    }
+
+    public void enterRoom(Hero p_Hero){
+        //TODO : Implements methods
+    }
 }
