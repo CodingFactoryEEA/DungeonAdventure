@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 
 /**
  *
@@ -8,9 +9,8 @@ public class Monster extends Character implements Searchable {
     protected static int s_iNbSorcerInstances = 0;
     protected static int s_iNbBarbarianInstances = 0;
     protected static int s_iNbTrollInstances = 0;
-
-    private String m_sEffectiveWeaponType;
-
+    public String m_sEffectiveWeaponType;
+    private boolean m_bSearchDone;
     protected Item m_Item;
 
 
@@ -32,6 +32,7 @@ public class Monster extends Character implements Searchable {
 
     @Override
     public void attack(Character p_TargetCharacter) {
+            // TODO: 26/10/2023
 
     }
 
@@ -41,6 +42,33 @@ public class Monster extends Character implements Searchable {
      * @return
      */
     public boolean isWeaponEfficient(Weapon p_Weapon){
-        return this.m_Weapon.equals(p_Weapon);
+        return CheckWeapon(p_Weapon);
     }
+
+    private boolean CheckWeapon(Weapon p_Weapon) {
+        if (this instanceof Barbarian && p_Weapon instanceof Sword){
+            return true;
+        }
+        if (this instanceof Sorcerer && p_Weapon instanceof WaterFlask){
+            return true;
+        }
+        if (this instanceof Thief && p_Weapon instanceof Arrow){
+            return true;
+        }
+        if (this instanceof Troll && p_Weapon instanceof Spear){
+            return true;
+        }
+        return this instanceof Zombie && p_Weapon instanceof FireArrow;
+    }
+
+    /**
+     * Cette méthode
+     * @param p_Power
+     * @return
+     */
+    public void hitByPower(ReduceLifePower p_Power){
+        // TODO: 26/10/2023
+    }
+
+
 }
