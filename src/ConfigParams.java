@@ -44,6 +44,7 @@ public abstract class ConfigParams {
     //TODO minor : Strings to move to another file
     public static final String GREETINGS = "|\n_______________________\n|Welcome to Coding Dungeon " +
             "\n Let enter THE DUNGEON\n_______________________|";
+    public static final String WELCOMEMESSAGE = "Vous entrez dans le Donjon...!";
 
 
 }
