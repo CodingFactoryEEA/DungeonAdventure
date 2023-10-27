@@ -5,8 +5,7 @@ public class Weapon {
 
 
     /**
-     * Ce paramètre indique le nombre de point d'attaque.
-     * @variable : AttackPoints
+     *
      */
     protected int m_iAttackPoints;
     /**

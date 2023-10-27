@@ -11,12 +11,15 @@ public class Hero extends Character {
     private List<HeroWeapons> m_Arsenal ;
 
     public Hero() {
+        super();
+        m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
         this.m_Arsenal = new ArrayList();
         addWeaponsToArsenal();
     }
 
     public Hero(int m_iStrength) {
         super();
+        m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
         this.m_iStrength = m_iStrength;
         this.m_Arsenal = new ArrayList();
         addWeaponsToArsenal();
@@ -38,7 +41,7 @@ public class Hero extends Character {
     private void selectWeaponFromArsenal(String p_sWeaponClassName) {
         m_Arsenal.forEach(weapon -> {
             if (weapon.getClass().getName().equals(p_sWeaponClassName)) {
-                super.m_Weapon = weapon;
+                super.m_Weapon = (Weapon) weapon;
             };
         });
     }
@@ -59,6 +62,7 @@ public class Hero extends Character {
             heroWeapon.setAttackBonus(2);
 
         }
+        System.out.println("\nLe Héro attaque ");
         super.attack(p_TargetCharacter);
 
         if (//this.arme
@@ -100,12 +104,12 @@ public class Hero extends Character {
         boolean isOk = true;
         while(isOk){
             Scanner scanner = new Scanner(System.in);
-            if(scanner.next() == p_Monster.getEffectiveWeaponType()){
+            if(scanner.next().equals(p_Monster.getEffectiveWeaponType())){
                 selectWeaponFromArsenal(p_Monster.getEffectiveWeaponType());
                 isOk = false;
             }
             else {
-                System.out.println("erreur d'entrée, veuillez entrer :" + p_Monster.getEffectiveWeaponType() +
+                System.out.println("erreur d'entrée, veuillez entrer : " + p_Monster.getEffectiveWeaponType() +
                         " entrez le sans erreur pour le moment svp x'D");
             }
         }

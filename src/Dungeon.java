@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Dungeon {
-    ArrayList<Room> rooms;
+    private ArrayList<Room> rooms = new ArrayList<>();
     public Dungeon() {
-        rooms = new ArrayList<>();
         for (int i = 0; i < ConfigParams.NBROOM; i++ ){
             this.rooms.add(new Room(i));
         }
@@ -12,13 +11,18 @@ public class Dungeon {
     //Hero will go through
 
 
+    /**
+     *
+     * @param p_iRoomIndex
+     * @return
+     */
     //Between 5 and 25 Rooms up to the difficulty targeted by the project team
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public Room getRoom(int p_iRoomIndex){
         return new Room(1);
     }
 
-    //TODO: interaction Room fighting management diagram
+    //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public void greetHeros(Hero p_Hero){
         rooms.forEach( room -> {
             room.enterRoom(p_Hero);
@@ -26,6 +30,12 @@ public class Dungeon {
                 Game.gameOver();
             //TODO MAJOR : Monstre mort passer à une autre chambre automatiquement fonctionne OU Search Item version complète ? OU ENDGAME trésor trouvé
         });
+
+//        for (Room room : this.rooms) {
+//            room.enterRoom(p_Hero);
+//            if (!p_Hero.isalive()) break;
+//        }
+
     }
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
