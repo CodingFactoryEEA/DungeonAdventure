@@ -21,12 +21,10 @@ public class Dungeon {
     //TODO: interaction Room fighting management diagram
     public void greetHeros(Hero p_Hero){
         rooms.forEach( room -> {
-            room.enterRoom(p_Hero);
-            //TODO MAJOR : implements boolean monster dead
-            boolean monsterDead = true;
-            while (p_Hero.isalive() && monsterDead){
-
+            while (p_Hero.isalive() && room.getMonster().isalive()){
+                room.enterRoom(p_Hero);
             }
+            //TODO MAJOR : Monstre mort passer à une autre chambre automatiquement fonctionne ?
         });
     }
 

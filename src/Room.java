@@ -50,7 +50,7 @@ public class Room {
 
     public Monster getMonster(){
         //TODO : Implements methods
-        return new Monster();
+        return monsterRoom;
     }
 
     public void enterRoom(Hero p_Hero){
