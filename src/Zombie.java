@@ -8,7 +8,7 @@ public class Zombie extends Monster {
      */
     public Zombie() {
         m_iLifePoints = ConfigParams.LIFE_POINTS_ZOMBIE;
-        super.m_sEffectiveWeaponType = Bite.class.getName();
+        super.m_sEffectiveWeaponType = FireArrow.class.getName();
         super.m_Weapon = new Bite();
         if (Monster.s_iNbZombieInstances % 5 == 1) {
             //create a Strength Potion

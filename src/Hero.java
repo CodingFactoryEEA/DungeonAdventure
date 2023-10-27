@@ -34,7 +34,8 @@ public class Hero extends Character {
     private void selectWeaponFromArsenal(String p_sWeaponClassName) {
         m_Arsenal.forEach(weapon -> {
             if (weapon.getClass().getName().equals(p_sWeaponClassName)) {
-                super.m_Weapon = weapon;
+
+                super.m_Weapon = (Weapon) weapon;
             };
         });
     }

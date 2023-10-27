@@ -58,7 +58,8 @@ public class Room {
 
         // a vérifier mais je pense que c'est ok ;)
         p_Hero.discoverEnnemy(this.monsterRoom);
-        while (!this.monsterRoom.isalive() && p_Hero.isalive()) {
+
+        while (this.monsterRoom.isalive() && p_Hero.isalive()) {
             this.monsterRoom.attack(p_Hero);
             if (!p_Hero.isalive()) break;
             p_Hero.attack(this.monsterRoom);

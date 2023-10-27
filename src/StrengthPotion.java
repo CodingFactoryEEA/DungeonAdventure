@@ -8,7 +8,7 @@ public class StrengthPotion extends Item {
     }
 
     @Override
-    public void applyEffect(Hero p_Hero) {
-        // TODO: 27/10/2023  
+    public int applyEffect(Hero p_Hero) {
+        return 0;
     }
 }

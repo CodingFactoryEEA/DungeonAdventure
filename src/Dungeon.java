@@ -4,13 +4,18 @@ public class Dungeon {
     private ArrayList<Room> rooms = new ArrayList<>();
     public Dungeon() {
         for (int i = 0; i < ConfigParams.NBROOM; i++ ){
-            this.rooms.add(new Room(ConfigParams.NBROOM));
+            this.rooms.add(new Room(i));
         }
     }
     //This class will contain Rooms through which the
     //Hero will go through
 
 
+    /**
+     *
+     * @param p_iRoomIndex
+     * @return
+     */
     //Between 5 and 25 Rooms up to the difficulty targeted by the project team
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public Room getRoom(int p_iRoomIndex){
@@ -22,7 +27,7 @@ public class Dungeon {
 
         for (Room room : this.rooms) {
             room.enterRoom(p_Hero);
-            if (p_Hero.isalive()) break;
+            if (!p_Hero.isalive()) break;
         }
 
     }
