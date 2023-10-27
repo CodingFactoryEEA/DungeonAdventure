@@ -92,7 +92,7 @@ public class Hero extends Character {
         }
     }
 
-
+    //TODO MAJOR LE HERO PERD SON TOUR S'IL SE TROMPE D'ENTREE
     public void discoverEnnemy(Monster p_Monster) {
         //TODO minor : Check values & set try catch
         System.out.println("L'arme efficace contre l'ennemie est " + p_Monster.getEffectiveWeaponType() +

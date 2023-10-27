@@ -53,6 +53,10 @@ public class Room {
         return monsterRoom;
     }
 
+    /**
+     * Notre Hero entre dans la salle
+     * @param p_Hero
+     */
     public void enterRoom(Hero p_Hero){
         //TODO : Implements methods => Voir interaction Room fighting management
         p_Hero.discoverEnnemy(monsterRoom);
