@@ -82,7 +82,7 @@ public class Monster extends Character implements Searchable {
     }
 
     /**
-     * Cette méthode
+     *
      * @param p_Power
      * @return
      */

@@ -34,7 +34,7 @@ public class Main {
     private static void playGame() {
         Hero hero = new Hero();
         Dungeon dungeon = new Dungeon();
-        System.out.println("Entrant dans le Donjon");
+        System.out.println("Vous entrez dans le Donjon...!");
         dungeon.greetHeros(hero);
         if (!hero.isalive()) {
             System.out.println("Bravo vous avez gagner !!");

@@ -24,17 +24,18 @@ public class Dungeon {
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public void greetHeros(Hero p_Hero){
-        rooms.forEach( room -> {
-            room.enterRoom(p_Hero);
-            if (!p_Hero.isalive())
-                Game.isGameOver = true;
-            //TODO MAJOR : Monstre mort passer à une autre chambre automatiquement fonctionne OU Search Item version complète ? OU ENDGAME trésor trouvé
-        });
-
-//        for (Room room : this.rooms) {
+//        rooms.forEach( room -> {
 //            room.enterRoom(p_Hero);
-//            if (!p_Hero.isalive()) break;
-//        }
+//            if (!p_Hero.isalive())
+//                Game.isGameOver = true;
+//            //TODO MAJOR : Monstre mort passer à une autre chambre automatiquement fonctionne OU Search Item version complète ? OU ENDGAME trésor trouvé
+//        });
+
+      for (Room room : this.rooms) {
+          if(room != null)
+            room.enterRoom(p_Hero);
+           if (!p_Hero.isalive()) break;
+        }
 
     }
 
