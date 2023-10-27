@@ -11,6 +11,7 @@ public class Hero extends Character {
     private List<HeroWeapons> m_Arsenal ;
 
     public Hero() {
+        m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
         this.m_Arsenal = new ArrayList();
         this.m_Arsenal.add(new Sword());
         this.m_Arsenal.add(new Arrow());
@@ -22,7 +23,7 @@ public class Hero extends Character {
     public Hero(int m_iStrength) {
         super();
         this.m_iStrength = m_iStrength;
-        m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
+
 
     }
 
@@ -52,8 +53,8 @@ public class Hero extends Character {
             HeroWeapons heroWeapon = (HeroWeapons)this.m_Weapon;
             //TODO Implémenter la logique de bonus d'attaque
             heroWeapon.setAttackBonus(2);
-
         }
+        System.out.println("\nLe Héro attaque ");
         super.attack(p_TargetCharacter);
 
         if (//this.arme

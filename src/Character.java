@@ -39,6 +39,7 @@ public class Character {
      */
     public void receiveDamages(int p_iDamages){
         m_iLifePoints -= p_iDamages;
+        if(isalive()) System.out.println("Dommage : " + p_iDamages + "Reste point de vie : " + m_iLifePoints);
     }
 
     /**

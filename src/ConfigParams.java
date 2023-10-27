@@ -34,4 +34,12 @@ public abstract class ConfigParams {
     public static final int REDUCE_LIFE_POWER_ZOMBIE = 12;
     public static final int REDUCE_LIFE_POWER_BARBARIAN = 5;
 
+    /**
+     * Effet value de
+     */
+
+    static final int EFFECT_VALUE_HEALTH_POTION = 16;
+    static final int EFFECT_VALUE_STRENGTH_POTION = 19;
+
+
 }

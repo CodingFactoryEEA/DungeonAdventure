@@ -7,7 +7,7 @@ public class HealthPotion extends Item {
      * Default constructor
      */
     public HealthPotion() {
-
+        m_iEffectValue = ConfigParams.EFFECT_VALUE_HEALTH_POTION;
     }
 
 
