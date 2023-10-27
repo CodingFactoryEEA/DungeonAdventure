@@ -44,7 +44,7 @@ public class Monster extends Character implements Searchable {
      */
     @Override
     public void attack(Character p_TargetCharacter) {
-        MonsterWeapon m_ActualWeapon = (MonsterWeapon)p_TargetCharacter.m_Weapon;
+        MonsterWeapon m_ActualWeapon = (MonsterWeapon)this.m_Weapon;
         super.attack(p_TargetCharacter);
         //TODO minor : to Refactor
         if(m_ActualWeapon instanceof Lightning){
