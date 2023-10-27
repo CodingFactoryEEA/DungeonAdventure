@@ -38,10 +38,33 @@ public class Monster extends Character implements Searchable {
         return m_sEffectiveWeaponType;
     }
 
+    /**
+     * Override attack de Character afin d'implémenter les dégats spéciaux des monstres
+     * @param p_TargetCharacter
+     */
     @Override
     public void attack(Character p_TargetCharacter) {
+        MonsterWeapon m_ActualWeapon = (MonsterWeapon)p_TargetCharacter.m_Weapon;
         super.attack(p_TargetCharacter);
-            // TODO: 26/10/2023
+        //TODO minor : to Refactor
+        if(m_ActualWeapon instanceof Lightning){
+            double stuningLuck = 0.10;
+            double randomValue = Math.random(); // Générer une valeur aléatoire entre 0 et 1
+
+            if (randomValue <= stuningLuck) {
+                System.out.println(" Vous êtes paralysé par un éclair, vous ne pouvez pas attaquer au prochain tour.");
+                this.m_Weapon.inflictDamage(p_TargetCharacter);
+            }
+        }
+        if(m_ActualWeapon instanceof Axe){
+            double axeLuck = 0.30;
+            double randomValue = Math.random(); // Générer une valeur aléatoire entre 0 et 1
+
+            if (randomValue <= axeLuck) {
+                System.out.println(" Vous avez pris un coup critique été frappé une seconde fois, vous prenez le même nombre de dommages.");
+                this.m_Weapon.inflictDamage(p_TargetCharacter);
+            }
+        }
     }
 
     /**

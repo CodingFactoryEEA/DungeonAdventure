@@ -11,6 +11,7 @@ public class MonsterWeapon extends Weapon {
 
     @Override
     public void inflictDamage(Character p_TargetCharacter) {
+
         super.inflictDamage(p_TargetCharacter);
         // TODO: 25/10/2023
     }

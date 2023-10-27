@@ -14,19 +14,16 @@ public class HeroWeapons extends Weapon implements Searchable {
     private int m_iAttackBonus;
 
     public HeroWeapons() {
-    }
-    public HeroWeapons(int m_iAttackBonus) {
-        this.m_iAttackBonus = m_iAttackBonus;
+        this.m_iAttackBonus = 0;
     }
 
     /**
-     * Surcharge de la méthode infléger les dommages de la classe mère.
+     * Surcharge de la méthode infléger les dommages de la classe mère afin d'ajouter la force du héro aux coups <3 enfin !!!
      * @param p_TargetCharacter
      */
     @Override
     public void inflictDamage(Character p_TargetCharacter) {
-        super.inflictDamage(p_TargetCharacter);
-        // TODO: 25/10/2023
+        p_TargetCharacter.receiveDamages(m_iAttackPoints+ConfigParams.STRENGTH_HERO+m_iAttackBonus);
     }
 
     /**
@@ -34,6 +31,7 @@ public class HeroWeapons extends Weapon implements Searchable {
      * @param p_iBonus
      */
     public void setAttackBonus(int p_iBonus){
+        //TODO FAIRE LA LOGIQUE METIER !!!
 
         m_iAttackBonus += p_iBonus;
     }

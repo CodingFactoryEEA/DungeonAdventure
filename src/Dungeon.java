@@ -27,7 +27,7 @@ public class Dungeon {
         rooms.forEach( room -> {
             room.enterRoom(p_Hero);
             if (!p_Hero.isalive())
-                Game.gameOver();
+                Game.isGameOver = true;
             //TODO MAJOR : Monstre mort passer à une autre chambre automatiquement fonctionne OU Search Item version complète ? OU ENDGAME trésor trouvé
         });
 

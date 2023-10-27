@@ -15,6 +15,7 @@ public class Hero extends Character {
         m_iLifePoints = ConfigParams.LIFE_POINTS_HERO;
         this.m_Arsenal = new ArrayList();
         addWeaponsToArsenal();
+        this.setStrength(ConfigParams.STRENGTH_HERO);
     }
 
     public Hero(int m_iStrength) {
@@ -23,6 +24,7 @@ public class Hero extends Character {
         this.m_iStrength = m_iStrength;
         this.m_Arsenal = new ArrayList();
         addWeaponsToArsenal();
+        this.setStrength(ConfigParams.STRENGTH_HERO);
 
 
     }
@@ -59,11 +61,29 @@ public class Hero extends Character {
             //TODO Mettre un try catch ou un check ou trouver une autre façon ou endroit où appeler la fonction
             HeroWeapons heroWeapon = (HeroWeapons)this.m_Weapon;
             //TODO Implémenter la logique de bonus d'attaque
-            heroWeapon.setAttackBonus(2);
+            if(heroWeapon instanceof WaterFlask){
+                heroWeapon.setAttackBonus(2);
+            }
+            System.out.println("\nLe Héro attaque ");
+            this.m_Weapon.inflictDamage(p_TargetCharacter);
+            if(heroWeapon instanceof Sword){
+                // Attaque avec l'épée : vérification de la chance de toucher la tête du barbare
+                double headSHotLuck = 0.10; // 10% de chance de toucher la tête
+                double randomValue = Math.random(); // Générer une valeur aléatoire entre 0 et 1
+
+                if (randomValue <= headSHotLuck) {
+                    System.out.println(" Vous touchez la tête du barbare et l'empêchez d'attaquer au prochain tour, vous le frappez donc gratuitement.");
+                    this.m_Weapon.inflictDamage(p_TargetCharacter);
+
+
+                    //((Barbarian)p_TargetCharacter).setParalyse(true); // Marquer le barbare comme paralysé
+                }
+            }
+
 
         }
-        System.out.println("\nLe Héro attaque ");
-        super.attack(p_TargetCharacter);
+
+
 
         if (//this.arme
         null == null) {
@@ -153,6 +173,7 @@ public class Hero extends Character {
     }
 
     public void setStrength(int p_iStrength) {
+
         this.m_iStrength = p_iStrength;
     }
 

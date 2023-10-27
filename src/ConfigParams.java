@@ -4,7 +4,6 @@ public abstract class ConfigParams {
      */
     public static final int NBROOM = 8;
 
-
     /**
      * Les points de vie des Monstres
      */
