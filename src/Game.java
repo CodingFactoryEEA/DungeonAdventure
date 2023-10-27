@@ -6,8 +6,8 @@ public class Game {
     public static boolean isGameOver;
     Game(){
         isGameOver = false;
-        Hero hero = new Hero(20);
-        Dungeon dungeon = new Dungeon();
+        this.hero = new Hero(20);
+        this.dungeon = new Dungeon();
 
     }
 
