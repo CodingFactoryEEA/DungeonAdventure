@@ -20,7 +20,13 @@ public class Dungeon {
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)
     public void greetHeros(Hero p_Hero){
+        rooms.forEach( room -> {
+            //TODO MAJOR : implements boolean monster dead
+            boolean monsterDead = true;
+            while (p_Hero.isalive() && monsterDead){
 
+            }
+        });
     }
 
     //TODO: Implements functions, parameter p_iIndex (and Loop ?)

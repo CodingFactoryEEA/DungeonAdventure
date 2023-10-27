@@ -1,12 +1,14 @@
 public class Game {
+    public Hero hero;
+    Dungeon dungeon;
     Game(){
-
+        Hero hero = new Hero(20);
+        Dungeon dungeon = new Dungeon();
     }
 
     //__________________________________________________________________________________________________________________
     //BEGIN Interaction Init Game
-    Hero hero = new Hero(20);
-    Dungeon dungeon = new Dungeon();
+
     public void startGame(){
         dungeon.greetHeros(hero);
     }
@@ -16,11 +18,16 @@ public class Game {
 
     //__________________________________________________________________________________________________________________
     //BEGIN Interaction End Game
-    public void startGame(){
+    public void endGame(){
         dungeon.greetHeros(hero);
     }
     //END Interaction End Game
     //__________________________________________________________________________________________________________________
 
+    //__________________________________________________________________________________________________________________
+    //BEGIN if heros is alive and monster dead
+    //TODO ? To move inside enterRoom() function ?
+    //END alt if heros is alive and monster dead
+    //__________________________________________________________________________________________________________________
 
 }
