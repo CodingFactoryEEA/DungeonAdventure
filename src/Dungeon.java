@@ -7,9 +7,6 @@ public class Dungeon {
             this.rooms.add(new Room(i));
         }
     }
-    //This class will contain Rooms through which the
-    //Hero will go through
-
 
     /**
      *

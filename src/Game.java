@@ -28,12 +28,14 @@ public class Game {
         System.out.println("PERDU ! Voulez vous rejouer ? Y pour oui N pour non");
 
         Scanner scanner = new Scanner(System.in);
-        if (scanner.next()=="Y"){
+        //TODO MINOR TO DELETE
+        String str = scanner.next();
+        if (str.equals("Y")){
             //TODO MAJOR RESET VALUES & While implementation
-            startGame();
         }else{
+            Main.continueGame = false;
             System.out.println("Au moins vous êtes sorti du donjon en vie... Pas comme nous X'D T.T XPTDR");
-            System.exit(0);
+
         }
     }
     //END Interaction End Game

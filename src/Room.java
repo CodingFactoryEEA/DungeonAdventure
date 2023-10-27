@@ -59,8 +59,11 @@ public class Room {
      */
     public void enterRoom(Hero p_Hero){
         //TODO : Implements methods => Voir interaction Room fighting management
-        p_Hero.discoverEnnemy(monsterRoom);
-        if(monsterRoom.isalive() && p_Hero.isalive()){
+        System.out.println("\nVous entrez dans une pièce");
+        //TODO MAJOR Implementer un manger d'inputs/outputs
+
+        while(monsterRoom.isalive() && p_Hero.isalive()){
+            p_Hero.discoverEnnemy(monsterRoom);
             monsterRoom.attack(p_Hero);
             if (p_Hero.isalive()){
                 p_Hero.attack(monsterRoom);
@@ -68,6 +71,7 @@ public class Room {
         }
         if(p_Hero.isalive() && !monsterRoom.isalive()){
             //TODO MAJOR : Passer à une autre Room en version simple de l'application, sinon chercher la pièce en version BONUS
+            System.out.println("Vous avez vaincu le monstre !");
         }
 
     }
