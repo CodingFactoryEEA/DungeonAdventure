@@ -5,7 +5,7 @@ public class Dungeon {
     public Dungeon() {
         rooms = new ArrayList<>();
         for (int i = 0; i < ConfigParams.NBROOM; i++ ){
-            this.rooms.add(new Room(ConfigParams.NBROOM));
+            this.rooms.add(new Room(i));
         }
     }
     //This class will contain Rooms through which the
