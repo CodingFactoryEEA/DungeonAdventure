@@ -54,6 +54,17 @@ public class Room {
     }
 
     public void enterRoom(Hero p_Hero){
-        //TODO : Implements methods
+        //TODO : Implements methods => Voir interaction Room fighting management
+        p_Hero.discoverEnnemy(monsterRoom);
+        if(monsterRoom.isalive() && p_Hero.isalive()){
+            monsterRoom.attack(p_Hero);
+            if (p_Hero.isalive()){
+                p_Hero.attack(monsterRoom);
+            }
+        }
+        if(p_Hero.isalive() && !monsterRoom.isalive()){
+            //TODO MAJOR : Passer à une autre Room en version simple de l'application, sinon chercher la pièce en version BONUS
+        }
+
     }
 }

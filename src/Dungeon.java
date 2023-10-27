@@ -18,9 +18,10 @@ public class Dungeon {
         return new Room(1);
     }
 
-    //TODO: Implements functions, parameter p_iIndex (and Loop ?)
+    //TODO: interaction Room fighting management diagram
     public void greetHeros(Hero p_Hero){
         rooms.forEach( room -> {
+            room.enterRoom(p_Hero);
             //TODO MAJOR : implements boolean monster dead
             boolean monsterDead = true;
             while (p_Hero.isalive() && monsterDead){
